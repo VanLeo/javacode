@@ -35,7 +35,7 @@ public class Classification {
             System.out.println("This can be a negative integer");
         }
         //Evaluates if it is an integer
-        if (data.length() == 10 && first != '-') {
+        if (data.length() == 10 && first != '-' && last < 8) {
             boolean isInteger = true;
             if (first != '1' && first != '2') {
                 isInteger = false;
@@ -50,7 +50,7 @@ public class Classification {
                 System.out.println("This can be an integer");
             }
         }
-        if (data.length() == 11) {
+        if (data.length() == 11 && last < 9) {
             boolean isInteger = true;
             if (first != '-') {
                 isInteger = false;
@@ -78,7 +78,7 @@ public class Classification {
         else if (data.length() < 19 && first == '-'){
             System.out.println("This can be a negative long");
         }
-        if (data.length() == 19 && first != '-'){
+        if (data.length() == 19 && first != '-' && last < 8){
             boolean isLong = true;
             if (first == '-') {
                 isLong = false;
@@ -226,6 +226,30 @@ public class Classification {
             third = data.charAt(2);
             fourth = data.charAt(3);
             last = data.charAt(19);
+        }
+        else if (data.length() == 10)
+        {
+            first = data.charAt(0);
+            second = data.charAt(1);
+            third = data.charAt(2);
+            fourth = data.charAt(3);
+            last = data.charAt(9);
+        }
+        else if (data.length() == 11)
+        {
+            first = data.charAt(0);
+            second = data.charAt(1);
+            third = data.charAt(2);
+            fourth = data.charAt(3);
+            last = data.charAt(10);
+        }
+        else if (data.length() == 19)
+        {
+            first = data.charAt(0);
+            second = data.charAt(1);
+            third = data.charAt(2);
+            fourth = data.charAt(3);
+            last = data.charAt(18);
         }
         else{
             first = data.charAt(0);
