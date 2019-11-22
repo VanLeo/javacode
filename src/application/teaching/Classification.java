@@ -23,19 +23,12 @@ public class Classification {
     }
 
     private void checkIfInteger(String data) {
-        char first;
-        char second;
-        char third;
 
         //Evaluates if it is an integer
         if (data.length() < 10) {
             System.out.println("This can be an integer");
         }
-
-        first = data.charAt(0);
-        second = data.charAt(1);
-        third = data.charAt(2);
-
+        checkChar(data);
         //Evaluates if it is an integer
         if (data.length() == 10) {
             boolean isInteger = true;
@@ -53,7 +46,6 @@ public class Classification {
             }
         }
         if (data.length() <= 11) {
-            char fourth = data.charAt(3);
             boolean isInteger = true;
             if (first != '-') {
                 isInteger = false;
@@ -75,14 +67,11 @@ public class Classification {
 
     private void checkIfLong(String data) {
         //Evaluates if it is a long
-        char first = data.charAt(0);
         if(data.length() < 19){
             System.out.println("This can be a long");
         }
+        checkChar(data);
         if (data.length() == 19 && first != '-'){
-           char second = data.charAt(1);
-           char third = data.charAt(2);
-           char fourth = data.charAt(3);
 
             boolean isLong = true;
             if (second != '2' && second != '1' && second != '0') {
@@ -99,10 +88,6 @@ public class Classification {
             }
         }
         if (data.length() <= 20){
-            char third = data.charAt(2);
-            char fourth = data.charAt(3);
-            char fifth = data.charAt(4);
-
             boolean isLong = true;
             if (first != '-'){
                 isLong = false;
@@ -127,15 +112,8 @@ public class Classification {
         if (data.length() < 3) {
             System.out.println("This can be a byte");
         }
+        checkChar(data);
         if (data.length() == 3) {
-            char first;
-            char second;
-            char third;
-
-            first = data.charAt(0);
-            second = data.charAt(1);
-            third = data.charAt(2);
-
             //Evaluates if it is a + byte
             if (data.length() == 3){
                 boolean isByte = true;
@@ -207,7 +185,34 @@ public class Classification {
          }
          return result;
      }
+        private void checkChar(String data) {
 
+        if (data.length() == 1){
+            first = data.charAt(0);
+        }
+        else if (data.length() == 2){
+            first = data.charAt(0);
+            second = data.charAt(1);
+        }
+        else if (data.length() == 3){
+            first = data.charAt(0);
+            second = data.charAt(1);
+            third = data.charAt(2);
+        }
+        else if (data.length() == 4){
+            first = data.charAt(0);
+            second = data.charAt(1);
+            third = data.charAt(2);
+            fourth = data.charAt(3);
+        }
+        else{
+            first = data.charAt(0);
+            second = data.charAt(1);
+            third = data.charAt(2);
+            fourth = data.charAt(3);
+            fifth = data.charAt(4);
+        }
+    }
 
 
 }
