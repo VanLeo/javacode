@@ -3,7 +3,11 @@ package application.teaching;
 import java.util.Scanner;
 
 public class Classification {
-
+    char first = 0;
+    char second = 0;
+    char third = 0;
+    char fourth = 0;
+    char fifth = 0;
 
     public Classification() {
     }
