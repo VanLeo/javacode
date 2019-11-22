@@ -116,11 +116,14 @@ public class Classification {
     }
 
     private void checkIfByte(String data) {
+        checkChar(data);
         //Evaluates if it is a byte
         if (data.length() < 3) {
             System.out.println("This can be a byte");
         }
-        checkChar(data);
+        if (data.length() > 3 && first == '-' && fourth != '9'){
+            System.out.println("This can be a negative byte");
+        }
         if (data.length() == 3) {
             //Evaluates if it is a + byte
             if (data.length() == 3){
@@ -144,12 +147,13 @@ public class Classification {
 
 
     private void checkIfChar(String data){
+        checkChar(data);
         if (data.length() == 1) {
             System.out.println("This is a char");
         }
-        if (data.length() < 5){
+        if (data.length() < 5 && first != '-'){
             System.out.println("This can be a char");
-        }else if (data.length() == 5){
+        }else if (data.length() == 5 && first != '-'){
             long maxChar = 65535;
             if(isCharInRange(maxChar, 5, data)){
                 System.out.println("This can be a char");
