@@ -1,4 +1,4 @@
-package application.teaching.system.teaching;
+package system.teaching;
 
 import java.util.Scanner;
 
