@@ -4,7 +4,7 @@ import java.util.Scanner;
 
 public class TeacherProgram {
 
-    //Main Teaching software
+    //Main Teaching software lol
     public static void main(String[] args) {
         System.out.println("Do you want to classify variables? (Y / N)");
         Scanner scanner = new Scanner(System.in);
@@ -20,7 +20,3 @@ public class TeacherProgram {
         }
         }
     }
-
-
-
-
