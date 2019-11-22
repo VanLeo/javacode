@@ -8,6 +8,7 @@ public class Classification {
     char third = 0;
     char fourth = 0;
     char fifth = 0;
+    char last = 0;
 
     void classify(){
         System.out.println("\nPlease introduce a variable:");
@@ -95,7 +96,7 @@ public class Classification {
                 System.out.println("This can be a long");
             }
         }
-        if (data.length() == 20){
+        if (data.length() == 20 && last < 9){
             boolean isLong = true;
             if (first != '-'){
                 isLong = false;
@@ -121,7 +122,7 @@ public class Classification {
         if (data.length() < 3) {
             System.out.println("This can be a byte");
         }
-        if (data.length() > 3 && first == '-' && fourth != '9'){
+        if (data.length() <= 3 && first == '-' && fourth != '9'){
             System.out.println("This can be a negative byte");
         }
         if (data.length() == 3) {
@@ -217,6 +218,14 @@ public class Classification {
             second = data.charAt(1);
             third = data.charAt(2);
             fourth = data.charAt(3);
+        }
+        else if (data.length() == 20)
+        {
+            first = data.charAt(0);
+            second = data.charAt(1);
+            third = data.charAt(2);
+            fourth = data.charAt(3);
+            last = data.charAt(19);
         }
         else{
             first = data.charAt(0);
